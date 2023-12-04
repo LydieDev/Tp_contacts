@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+   {%block content%}
+  
+   <div class=" row corps">
+    <div class="col-3"></div>
+    <div class="col-6">
+        <h3 class="py-3 titre-form">Enregistrer un contact</h3>
+        <form action={{url_for('contact')}} method="POST">
+            <input class="form-control" type="text" placeholder="Nom" name="nom" required><br><br>
+            <input class="form-control" type="text" placeholder="Adresse" name="adresse" required><br><br>
+            <input class="form-control" type="tel" placeholder="Numero de telephone" name="num_phone" required><br><br>
+            <input class="form-control" type="email" placeholder="Adresse email" name="email" required><br><br>
+            <textarea class="form-conrol" placeholder="Description du contact" name="desc" required></textarea><br><br>
+            <button class="btn btn-primary" type="submit" value="Envoyer">Enregistrer</button>
+
+        </form>
+    </div>
+    <div class="col-3"></div>
+</div>
+
+{%endblock%}
+</body>
+
+</html>

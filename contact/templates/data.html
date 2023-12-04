@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+{% block content%}
+<div class="px-5 py-5"  id="table">
+        <div class="titre-table d-flex flex-column">
+            <h2>MES CONTACTS</h2>
+        </div>
+        <div class="liste">
+            {% if data%}
+            <table class="table">
+                
+                <tbody>
+                    {% for item in data%}
+                    <tr>
+                        
+                        <td style="width:50px"><button class="btn btn-xs" type="button" data-toggle="collapse" data-target=".multi-collapse{{item[0]}}" aria-expanded="false" aria-controls="row{{item[0]}}">details</button><td  style="width:100px">{{item[0]}}</td>
+                        <td style="width:100px">{{item[1]}}</td></td>
+                        <td style="width:100px" class="collapse multi-collapse{{item[0]}}" id="row{{item[0]}}">{{item[2]}}</td>
+                        <td style="width:100px" class="collapse multi-collapse{{item[0]}}" id="row{{item[0]}}">{{item[4]}}</td>
+                        <td style="width:100px" class="collapse multi-collapse{{item[0]}}" id="row{{item[0]}}">{{item[3]}}</td>
+                        <td style="width:100px" class="collapse multi-collapse{{item[0]}}" id="row{{item[0]}}">{{item[5]}}</td>
+                        
+                    </tr>
+                    
+                       
+                    
+                  {%endfor%}
+                </tbody>
+              </table>
+              {%else%}
+              <p class="bg-secondary-subtle px-2 py-3"> Il n'y a aucune donnee dans la base</p>
+            {%endif%}
+
+        </div>
+        <div id="details" style="display:none;">
+            
+        </div>
+    
+
+
+{%endblock%}
